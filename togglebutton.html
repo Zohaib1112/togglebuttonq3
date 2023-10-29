@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stylish Background Color Toggle</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff; 
+            transition: background-color 0.3s ease; 
+        }
+
+        button#toggleButton {
+            background-color: #f7c523;
+            color: #ffffff;
+            border: none;
+            padding: 15px 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleButton">Click Here</button>
+
+    <script>
+        
+        let isBackgroundColorChanged = false;
+
+       
+        function toggleBackgroundColor() {
+            const body = document.body;
+
+            if (isBackgroundColorChanged) {
+                body.style.backgroundColor = "#ffffff"; 
+            } else {
+                body.style.backgroundColor = "#3498db"; 
+            }
+
+            isBackgroundColorChanged = !isBackgroundColorChanged; 
+        }
+
+     
+        const toggleButton = document.getElementById("toggleButton");
+        toggleButton.addEventListener("click", toggleBackgroundColor);
+    </script>
+</body>
+</html>
